@@ -1,9 +1,13 @@
+import roseIcon from '../assets/roseIcon.png';
+
 const Header = () => {
     return (
         <header>
-            <div><img src="" alt="" />rose icon</div>
-            <h1>Rose Apothecary</h1>
-            <div><img src="" alt="" />rose icon</div>
+            <ul className="wrapper">
+                <li><div className='iconContainer'><img src={roseIcon} alt="rose icon" /></div></li>
+                <li><h1>Rose Apothecary</h1></li>
+                <li><div className='iconContainer'><img src={roseIcon} alt="rose icon" /></div></li>
+            </ul>
         </header>
     )
 }

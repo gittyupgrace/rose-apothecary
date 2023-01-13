@@ -1,6 +1,6 @@
 const ProductListItem = () => {
     return (
-        <li className="product-list-item">
+        <li className="productListItem">
             <div><img src="" alt="" /></div>
             <h3>Product Name</h3>
             <p>$ Price</p>

@@ -1,6 +1,6 @@
 const CartItem = () => {
     return (
-        <li className="cart-item">
+        <li className="cartItem">
             <div><img src="" alt="" /></div>
             <h3>Product Name</h3>
             <p>$ Price</p>
