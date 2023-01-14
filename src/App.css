@@ -15,6 +15,8 @@ html {
 
 a {
   display: inline-block;
+  text-decoration: none;
+  color: inherit;
 }
 
 img {
@@ -35,8 +37,8 @@ ul {
 }
 
 header {
-  border-top: 5px solid black;
-  border-bottom: 5px solid black
+  border-top: 8px double black;
+  border-bottom: 8px double black
 }
 
 header ul {
@@ -47,13 +49,13 @@ header ul {
 
 h1 {
   text-transform: uppercase;
-  font-size: 3rem;
-  padding: 0 10px 0 10px;
+  font-size: 4rem;
+  padding: 0 15px;
 }
 
 .iconContainer {
-  width: 100px;
-  height: 100px;
+  width: 125px;
+  height: 125px;
 }
 
 nav {
@@ -67,7 +69,50 @@ nav ul {
 }
 
 .cartLink {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   padding: 10px;
+}
+
+.productList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 50px auto;
+}
+
+.productListItem {
+  text-align: center;
+  margin: 40px 20px;
+  width: calc(33% - 40px);
+}
+
+button {
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 15px 0;
+  width: 100%;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+button:hover, 
+button:focus {
+  background-color: black;
+  color: white;
+}
+
+footer {
+  background-color: black;
+}
+
+footer p {
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+footer a:hover, 
+footer a:focus {
+  text-decoration: underline;
 }

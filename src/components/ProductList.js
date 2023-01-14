@@ -1,15 +1,17 @@
 import ProductListItem from "./ProductListItem";
 
-const ProductList = () => {
+const ProductList = ({arrayOfProducts}) => {
+
+    // console.log(arrayOfProducts);
+
     return (
-        <ul>
-            {/*This is where map through array of products from db
-            
-            productArray.map((param) => {
-                return <ProductListItem + props />
-            })
-            
-            */}
+
+        <ul className="productList wrapper">
+            {
+                arrayOfProducts.map((productObject) => {
+                    return <ProductListItem key={productObject.key} productInfo={productObject} />
+                })
+            }
         </ul>
     )
 }
