@@ -28,18 +28,21 @@ const StoreFront = () => {
 
             //parse/convert db response into useable format for eventually displaying it on the page
             const dbValue = dbResponse.val();
-            // console.log(dbValue);
+            // console.log(dbValue.products);
+
+            //our database has 2 objects - the products object and the cart object, save both to their own variables for future reference
+            const productsObject = dbValue.products;
 
             //empty array to store db data
             const productArray = [];
 
             //loop through db object and push db data in productArray
-            for (let product in dbValue) {
+            for (let product in productsObject) {
                 // console.log(dbValue[product]);
                 // console.log(product);
 
                 productArray.push({
-                    productDetails: dbValue[product],
+                    productDetails: productsObject[product],
                     key: product
                 });
             }
@@ -50,11 +53,15 @@ const StoreFront = () => {
 
     }, []);
 
+    const addToCart = () => {
+        console.log('the function works!!');
+    }
+
     return (
         <>
             <Nav />
             <Header />
-            <ProductList arrayOfProducts={products} />
+            <ProductList arrayOfProducts={products} handleAddToCart={addToCart}/>
             <Footer />
         </>
     )

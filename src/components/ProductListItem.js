@@ -1,14 +1,16 @@
 
-const ProductListItem = ({productInfo}) => {
+const ProductListItem = ({productInfo, handleClick}) => {
 
     // console.log(productInfo);
 
     return (
         <li className="productListItem">
-            <div><img src={productInfo.productDetails.image} alt={productInfo.productDetails.alt} /></div>
+            <div className="productImageContainer">
+                <img src={productInfo.productDetails.image} alt={productInfo.productDetails.alt} />
+                <h4>{productInfo.productDetails.quantity} Left</h4>
+            </div>
             <h3>{productInfo.productDetails.name}</h3>
-            <p>{productInfo.productDetails.quantity} Left</p>
-            <button>Add To Cart ${productInfo.productDetails.price}</button>
+            <button onClick={handleClick}>Add To Cart ${productInfo.productDetails.price}</button>
         </li>
     )
 }

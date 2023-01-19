@@ -1,6 +1,6 @@
 import ProductListItem from "./ProductListItem";
 
-const ProductList = ({arrayOfProducts}) => {
+const ProductList = ({arrayOfProducts, handleAddToCart}) => {
 
     // console.log(arrayOfProducts);
 
@@ -9,7 +9,7 @@ const ProductList = ({arrayOfProducts}) => {
         <ul className="productList wrapper">
             {
                 arrayOfProducts.map((productObject) => {
-                    return <ProductListItem key={productObject.key} productInfo={productObject} />
+                    return <ProductListItem key={productObject.key} productInfo={productObject} handleClick={handleAddToCart}/>
                 })
             }
         </ul>
