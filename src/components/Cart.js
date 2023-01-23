@@ -1,15 +1,13 @@
 import CartItem from "./CartItem";
 
-const Cart = () => {
+const Cart = ({cartArray, handleRemoveFromCart}) => {
     return (
         <ul>
-            {/*This is where map through array of products from db
-            
-            productArray.map((param) => {
-                return <CartItem + props />
-            })
-            
-            */}
+            {
+                cartArray.map((cartItemInfo) => {
+                    return <CartItem key={cartItemInfo.key} productInfo={cartItemInfo} handleRemoveFromCart={handleRemoveFromCart} />
+                })
+            }
         </ul>
     )
 }

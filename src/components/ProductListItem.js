@@ -1,16 +1,28 @@
+// import ProductQuantity from "./ProductQuantity";
+import AddToCart from "./AddToCart";
 
-const ProductListItem = ({productInfo, handleClick}) => {
+const ProductListItem = ({productInfo, handleAddToCart}) => {
 
-    // console.log(productInfo);
+    // console.log(productInfo);  
 
     return (
-        <li className="productListItem">
+        <li className="productListItem" key={productInfo.key}>
             <div className="productImageContainer">
                 <img src={productInfo.productDetails.image} alt={productInfo.productDetails.alt} />
-                <h4>{productInfo.productDetails.quantity} Left</h4>
+
+            {/* 
+                {
+                    inventoryInfo.map((inventoryObject) => {
+                        return <ProductQuantity key={inventoryObject.key} quantityInfo={inventoryObject} />
+                    })
+                } */}
+                
+            {/* <ProductQuantity quantity={inventoryInfo.productInventory}/> */}
+
+
             </div>
             <h3>{productInfo.productDetails.name}</h3>
-            <button onClick={handleClick}>Add To Cart ${productInfo.productDetails.price}</button>
+            <AddToCart productPrice={productInfo.productDetails.price} productKey={productInfo.key} product={productInfo} handleClick={handleAddToCart}/>
         </li>
     )
 }
