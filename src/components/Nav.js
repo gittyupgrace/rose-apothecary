@@ -6,7 +6,7 @@ const Nav = () => {
     return (
         <nav className='wrapper'>
             <ul>
-                <li><a href="" className='cartLink'><img src={cartIcon} alt="" /></a></li>
+                <li className='cartLink'><img src={cartIcon} alt="" /></li>
                 {/*^use routing to create link between cart icon and <Cart /> component? */}
             </ul>
         </nav>
