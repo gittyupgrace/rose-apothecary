@@ -1,9 +1,9 @@
 const RemoveFromCart = ({handleClick, productKey}) => {
 
     // console.log(productKey)
-    
+
     return (
-        <button onClick={()=>{handleClick(productKey)}}>Remove From Cart</button>
+        <button className="removeButton" onClick={()=>{handleClick(productKey)}}>Remove Item</button>
     )
 }
 

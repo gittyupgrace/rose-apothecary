@@ -6,9 +6,11 @@ const CartItem = ({productInfo, handleRemoveFromCart}) => {
 
     return (
         <li className="cartItem">
-            <div><img src="" alt="" /></div>
-            <h3>{productInfo.productName}</h3>
-            <p>$ Price</p>
+            <div className="cartItemInfo">
+                <div><img src="" alt="" />🖼️</div>
+                <h3>{productInfo.productName}</h3>
+                <p>$ Price</p>
+            </div>
             <RemoveFromCart handleClick={handleRemoveFromCart} productKey={productInfo.key} />
         </li>
     )

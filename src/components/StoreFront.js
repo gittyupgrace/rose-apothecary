@@ -4,10 +4,8 @@ import {useState, useEffect} from "react";
 //import firebase to gain access to info in db
 import firebase from '../firebase';
 //and import firebase modules
-import {ref, getDatabase, onValue, push} from 'firebase/database';
+import {ref, getDatabase, onValue, push, remove} from 'firebase/database';
 
-import Nav from "./Nav";
-import Header from "./Header";
 import ProductList from "./ProductList";
 import Cart from "./Cart";
 import Footer from "./Footer";
@@ -83,46 +81,29 @@ const StoreFront = () => {
     }, []);
 
 
-    // const cartArray = [];
-
-    //add click event that updates quantity in db and renders it to page on button click
+   
+        //function to add item from product list to cart
     const addToCart = (productKey) => {
 
-        // console.log('works!!');
-        // console.log(productKey)
-
-        // cartArray.push(productKey)
-        
-        // console.log(cartArray)
-        // console.log(cartArray.length)
-
-        // const db = getDatabase(firebase);
-        // const dbRef = ref(db);
-
-        // setCart(cartArray)
-        // console.log(cart)
         const db = getDatabase(firebase);
         const cartDbRef = ref(db, "cart");
 
         push(cartDbRef, productKey);
     }
 
+
+        //function to remove items in cart from db
     const removeFromCart = (itemKey) => {
-        console.log('yeah!')
-        // console.log(itemKey)
+        
+        const db = getDatabase(firebase);
+        const productRef = ref(db, `/cart/${itemKey}`);
 
-        // const db = getDatabase(firebase);
-        // const productRef = ref(db, `/${cart}`);
-        // console.log(productRef)
-
-        // remove(productRef, itemKey);
+        remove(productRef);
     }
 
 
     return (
         <>
-            <Nav />
-            <Header />
             <ProductList arrayOfProducts={products} handleAddToCart={addToCart}/>
             <Cart cartArray={cart} handleRemoveFromCart={removeFromCart} />
             <Footer />

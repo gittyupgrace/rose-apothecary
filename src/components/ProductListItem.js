@@ -9,7 +9,7 @@ const ProductListItem = ({productInfo, handleAddToCart}) => {
         <li className="productListItem" key={productInfo.key}>
             <div className="productImageContainer">
                 <img src={productInfo.productDetails.image} alt={productInfo.productDetails.alt} />
-
+                <h4>{productInfo.productDetails.quantity} Left</h4>
             {/* 
                 {
                     inventoryInfo.map((inventoryObject) => {
