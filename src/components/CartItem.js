@@ -1,17 +1,14 @@
-import RemoveFromCart from "./RemoveFromCart";
-
-const CartItem = ({productInfo, handleRemoveFromCart}) => {
-
-    // console.log(productInfo.key)
-
+const CartItem = ({productInfo, handleClick}) => {
     return (
         <li className="cartItem">
-            <div className="cartItemInfo">
-                <div><img src="" alt="" />🖼️</div>
-                <h3>{productInfo.productName}</h3>
-                <p>$ Price</p>
+            <div className="cartImage">
+                <img src={productInfo.itemDetails.image} alt={productInfo.itemDetails.alt} />
             </div>
-            <RemoveFromCart handleClick={handleRemoveFromCart} productKey={productInfo.key} />
+            <div className="cartItemInfo">
+                <h3>{productInfo.itemDetails.name}</h3>
+                <p>${productInfo.itemDetails.price}.00</p>
+            </div>
+            <button className="removeButton" onClick={() => { handleClick(productInfo) }}>Remove Item</button>
         </li>
     )
 }

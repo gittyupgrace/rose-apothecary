@@ -8,7 +8,6 @@ import {ref, getDatabase, onValue, push, remove} from 'firebase/database';
 
 import ProductList from "./ProductList";
 import Cart from "./Cart";
-import Footer from "./Footer";
 
 const StoreFront = () => {
 
@@ -39,13 +38,11 @@ const StoreFront = () => {
             const productsObject = dbValue.products;
             const cartObject = dbValue.cart;
 
-            //empty array to store db data
+            //empty array to store product data
             const productArray = [];
 
-            //loop through db object and push db data in productArray
+            //loop through db product object and push db data in productArray
             for (let product in productsObject) {
-                // console.log(dbValue[product]);
-                // console.log(product);
 
                 productArray.push({
                     productDetails: productsObject[product],
@@ -53,15 +50,18 @@ const StoreFront = () => {
                 });
             }
 
+            //empty array to store cart data
             const cartArray = [];
 
+            //loop through db cart object and push db data in cartArray
             for (let item in cartObject) {
                 cartArray.push({
-                    productName: cartObject[item],
+                    itemDetails: cartObject[item],
                     key: item
                 });
             }
 
+            //save db data to state
             setProducts(productArray);
             setCart(cartArray);
                       
@@ -83,31 +83,32 @@ const StoreFront = () => {
 
    
         //function to add item from product list to cart
-    const addToCart = (productKey) => {
+    const addToCart = (productInfo) => {
+
+        const cartInfo = productInfo.productDetails;
 
         const db = getDatabase(firebase);
-        const cartDbRef = ref(db, "cart");
+        const cartDbRef = ref(db, `cart`);
 
-        push(cartDbRef, productKey);
+        push(cartDbRef, cartInfo);
     }
 
 
-        //function to remove items in cart from db
-    const removeFromCart = (itemKey) => {
+        //function to remove items in cart from db/page
+    const removeFromCart = (productInfo) => {
         
         const db = getDatabase(firebase);
-        const productRef = ref(db, `/cart/${itemKey}`);
+        const productRef = ref(db, `/cart/${productInfo.key}`);
 
         remove(productRef);
     }
 
 
     return (
-        <>
+        <main>
             <ProductList arrayOfProducts={products} handleAddToCart={addToCart}/>
             <Cart cartArray={cart} handleRemoveFromCart={removeFromCart} />
-            <Footer />
-        </>
+        </main>
     )
 }
 

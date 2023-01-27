@@ -5,9 +5,9 @@ const Header = () => {
     return (
         <header>
             <ul className="wrapper">
-                <li><div className='iconContainer'><img src={roseIcon} alt="rose icon" /></div></li>
+                <li><div className='iconContainer'><img src={roseIcon} alt="" aria-hidden="true" /></div></li>
                 <li><Link><h1>Rose Apothecary</h1></Link></li>
-                <li><div className='iconContainer'><img src={roseIcon} alt="rose icon" /></div></li>
+                <li><div className='iconContainer'><img src={roseIcon} alt="" aria-hidden="true" /></div></li>
             </ul>
         </header>
     )

@@ -1,18 +1,12 @@
 import ProductListItem from "./ProductListItem";
 
-
 const ProductList = ({arrayOfProducts, handleAddToCart}) => {
-
-    // console.log(arrayOfProducts);
-    // console.log(arrayOfInventory)
-    
-
     return (
 
         <ul className="productList wrapper">
             {
                 arrayOfProducts.map((productObject) => {
-                    return <ProductListItem key={productObject.key} productInfo={productObject} handleAddToCart={handleAddToCart}/>
+                    return <ProductListItem key={productObject.key} productInfo={productObject} handleClick={handleAddToCart}/>
                 })
             }
 

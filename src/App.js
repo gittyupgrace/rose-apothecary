@@ -1,20 +1,17 @@
 import './index.css';
-import {Routes, Route} from 'react-router-dom';
+
 import Nav from './components/Nav';
 import Header from './components/Header';
 import StoreFront from './components/StoreFront';
-import Cart from './components/Cart';
+import Footer from './components/Footer';
 
-function App() {
+const App = () => {
   return (
     <>
       <Nav />
       <Header />
-
-      <Routes>
-        <Route path="/" element={<StoreFront />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
+      <StoreFront />
+      <Footer />
     </>
   );
 }

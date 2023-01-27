@@ -1,6 +1,4 @@
-// import { Link } from 'react-router-dom';
 import cartIcon from '../assets/cartIcon.png';
-
 
 const Nav = () => {
     return (

@@ -1,10 +1,6 @@
 // import ProductQuantity from "./ProductQuantity";
-import AddToCart from "./AddToCart";
 
-const ProductListItem = ({productInfo, handleAddToCart}) => {
-
-    // console.log(productInfo);  
-
+const ProductListItem = ({productInfo, handleClick}) => {
     return (
         <li className="productListItem" key={productInfo.key}>
             <div className="productImageContainer">
@@ -22,7 +18,7 @@ const ProductListItem = ({productInfo, handleAddToCart}) => {
 
             </div>
             <h3>{productInfo.productDetails.name}</h3>
-            <AddToCart productPrice={productInfo.productDetails.price} productKey={productInfo.key} product={productInfo} handleClick={handleAddToCart}/>
+            <button onClick={() => { handleClick(productInfo) }}>Add to Cart ${productInfo.productDetails.productPrice}</button>
         </li>
     )
 }

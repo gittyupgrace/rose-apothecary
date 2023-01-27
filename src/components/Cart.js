@@ -2,17 +2,19 @@ import CartItem from "./CartItem";
 
 const Cart = ({cartArray, handleRemoveFromCart}) => {
     return (
-        <ul className="cartList wrapper">
+        <section className="cart wrapper">
             <h2>Your Cart</h2>
-            {
-                cartArray.map((cartItemInfo) => {
-                    return <CartItem key={cartItemInfo.key} productInfo={cartItemInfo} handleRemoveFromCart={handleRemoveFromCart} />
-                })
-            }
-            <h5>Subtotal: $</h5>
+            <ul>
+                {
+                    cartArray.map((cartItemInfo) => {
+                        return <CartItem key={cartItemInfo.key} productInfo={cartItemInfo} handleClick={handleRemoveFromCart} />
+                    })
+                }
+            </ul>
+            <h5 className="subtotal">Subtotal: $</h5>
             <button>Keep Shopping</button>
             <button>Checkout</button>
-        </ul>
+        </section>
     )
 }
 
