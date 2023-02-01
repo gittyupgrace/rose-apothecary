@@ -3,6 +3,7 @@ import CartItem from "./CartItem";
 const Cart = ({cartArray, handleRemoveFromCart}) => {
     return (
         <section className="cart wrapper">
+            {/* stretch goal: close cart pop-out using 'x' button <button className="exitCart"><span className="sr-only">Exit cart</span>X</button> */}
             <h2>Your Cart</h2>
             <ul>
                 {
@@ -15,7 +16,7 @@ const Cart = ({cartArray, handleRemoveFromCart}) => {
             <button>Keep Shopping</button>
             <button>Checkout</button>
         </section>
-    )
+    );
 }
 
 export default Cart;

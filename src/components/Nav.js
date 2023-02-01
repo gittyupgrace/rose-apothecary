@@ -5,10 +5,10 @@ const Nav = () => {
         <nav className='wrapper'>
             <ul>
                 <li className='cartLink'><img src={cartIcon} alt="" /></li>
-                {/*^use routing to create link between cart icon and <Cart /> component? */}
+                {/*stretch goal: create pop-out capabilities for hidden cart by clicking cart icon*/}
             </ul>
         </nav>
-    )
+    );
 }
 
 export default Nav;

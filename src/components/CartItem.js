@@ -10,7 +10,7 @@ const CartItem = ({productInfo, handleClick}) => {
             </div>
             <button className="removeButton" onClick={() => { handleClick(productInfo) }}>Remove Item</button>
         </li>
-    )
+    );
 }
 
 export default CartItem;

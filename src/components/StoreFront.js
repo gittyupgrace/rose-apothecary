@@ -13,9 +13,6 @@ const StoreFront = () => {
 
     //initialise state (set useState to contain an empty array - want to eventually map through the db data so will need to convert/store it as an array)
     const [products, setProducts] = useState([]);
-
-    // const [quantity, setQuantity] = useState([]);
-
     const [cart, setCart] = useState([]);
     
 
@@ -32,8 +29,7 @@ const StoreFront = () => {
 
             //parse/convert db response into useable format for eventually displaying it on the page
             const dbValue = dbResponse.val();
-            // console.log(dbValue.products);
-
+            
             //our database has 2 objects - the products object and the cart object, save both to their own variables for future reference
             const productsObject = dbValue.products;
             const cartObject = dbValue.cart;
@@ -63,26 +59,13 @@ const StoreFront = () => {
 
             //save db data to state
             setProducts(productArray);
-            setCart(cartArray);
-                      
-            // const inventoryArray = [];
-
-            // for (let quantity in inventoryObject) {
-            //     inventoryArray.push({
-            //         productInventory: inventoryObject[quantity], 
-            //         key: quantity
-            //     });
-            // }
-
-            // setQuantity(inventoryArray);
-            
+            setCart(cartArray);            
         })
 
     }, []);
 
-
    
-        //function to add item from product list to cart
+    //function to add item from product list to cart
     const addToCart = (productInfo) => {
 
         const cartInfo = productInfo.productDetails;
@@ -94,7 +77,7 @@ const StoreFront = () => {
     }
 
 
-        //function to remove items in cart from db/page
+    //function to remove items in cart from db/page
     const removeFromCart = (productInfo) => {
         
         const db = getDatabase(firebase);
@@ -109,7 +92,7 @@ const StoreFront = () => {
             <ProductList arrayOfProducts={products} handleAddToCart={addToCart}/>
             <Cart cartArray={cart} handleRemoveFromCart={removeFromCart} />
         </main>
-    )
+    );
 }
 
 export default StoreFront;

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+//strecth goal: use react router to create homepage Link for h1 (import { Link } from 'react-router-dom';)
 import roseIcon from '../assets/roseIcon.png';
 
 const Header = () => {
@@ -6,11 +6,11 @@ const Header = () => {
         <header>
             <ul className="wrapper">
                 <li><div className='iconContainer'><img src={roseIcon} alt="" aria-hidden="true" /></div></li>
-                <li><Link><h1>Rose Apothecary</h1></Link></li>
+                <li><h1>Rose Apothecary</h1></li>
                 <li><div className='iconContainer'><img src={roseIcon} alt="" aria-hidden="true" /></div></li>
             </ul>
         </header>
-    )
+    );
 }
 
 export default Header;

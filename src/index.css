@@ -309,6 +309,7 @@ h1 {
   font-size: 4rem;
   padding: 0 15px;
   letter-spacing: 5px;
+  text-align: center;
 }
 
 .iconContainer {
@@ -349,6 +350,10 @@ nav ul {
   position: relative;
 }
 
+h3 {
+  font-size: 1em;
+}
+
 h4 {
   font-family: 'Varela Round', sans-serif;
   font-weight: normal;
@@ -362,7 +367,7 @@ h4 {
 .cart {
   display: flex;
   flex-direction: column;
-  max-width: 50%;
+  max-width: 60%;
   padding: 50px 20px;
 }
 
@@ -375,23 +380,22 @@ h4 {
   justify-content: space-between;
   padding: 40px 20px;
   border-bottom: 2px solid black;
+  flex-wrap: wrap;
 }
 
 .cartImage {
-  width: calc(33% - 75px);
-  margin-right: 75px;
+  flex-basis: 30%;
 }
 
 .cartItemInfo {
-  width: calc(37% - 10px);
-  margin-right: 10px;
+  flex-basis: 30%;
 }
 
 button {
   font-family: 'Varela Round', sans-serif;
   background-color: transparent;
   border: 2px solid black;
-  padding: 15px 0;
+  padding: 15px 5px;
   width: 100%;
   text-transform: uppercase;
   transition: 0.3s;
@@ -401,6 +405,10 @@ button {
 .removeButton {
   width: 30%;
   align-self: flex-end;
+  font-size: 0.9em;
+  border: 1.5px solid black;
+  padding: 10px 5px;
+  flex-basis: 30%;
 }
 
 button:hover,
@@ -431,4 +439,69 @@ footer a {
 footer a:hover,
 footer a:focus {
   text-decoration: underline;
+}
+
+@media (max-width: 950px) {
+  h1 {
+    font-size: 3rem;
+  }
+  
+  .iconContainer {
+    width: 100px;
+    height: 100px;
+  }
+
+  .productListItem {
+    width: calc(50% - 40px);
+  }
+
+  .cart {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 740px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  .iconContainer {
+    width: 75px;
+    height: 75px;
+  }
+
+  .cart {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  h1 {
+    font-size: 1rem;
+  }
+
+  .iconContainer {
+    width: 45px;
+    height: 45px;
+  }
+
+  .productList {
+    justify-content: center;
+  }
+
+  .productListItem {
+    width: calc(80% - 40px);
+  }
+
+  .cartImage {
+    flex-basis: 50%;
+  }
+
+  .cartInfo {
+    flex-basis: 50%;
+  }
+
+  .removeButton {
+    flex-basis: 75%;
+  }
 }
