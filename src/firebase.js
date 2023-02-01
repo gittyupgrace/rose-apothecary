@@ -1,12 +1,12 @@
 import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBfdO1Sk95USYL8UtfCu7i0A69IOcYdebk",
-    authDomain: "rose-apothecary.firebaseapp.com",
-    projectId: "rose-apothecary",
-    storageBucket: "rose-apothecary.appspot.com",
-    messagingSenderId: "902096771417",
-    appId: "1:902096771417:web:1d2ef63d010fac2829d448"
+    apiKey: "AIzaSyCybPziMrgHA6v85h8ZZlyYveuS_M3Dg7E",
+    authDomain: "rose-apothecary-store.firebaseapp.com",
+    projectId: "rose-apothecary-store",
+    storageBucket: "rose-apothecary-store.appspot.com",
+    messagingSenderId: "36724422089",
+    appId: "1:36724422089:web:174f65172b2e944b012418"
 };
 
 const firebase = initializeApp(firebaseConfig);
