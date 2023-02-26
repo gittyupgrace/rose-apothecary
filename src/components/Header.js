@@ -1,4 +1,3 @@
-//strecth goal: use react router to create homepage Link for h1 (import { Link } from 'react-router-dom';)
 import roseIcon from '../assets/roseIcon.png';
 
 const Header = () => {

@@ -2,7 +2,6 @@ import ProductListItem from "./ProductListItem";
 
 const ProductList = ({arrayOfProducts, handleAddToCart}) => {
     return (
-
         <ul className="productList wrapper">
             {
                 arrayOfProducts.map((productObject) => {
