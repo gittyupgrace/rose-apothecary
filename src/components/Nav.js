@@ -4,7 +4,7 @@ const Nav = () => {
     return (
         <nav className='wrapper'>
             <ul>
-                <li className='cartLink'><img src={cartIcon} alt="Icon image of a shopping cart" /></li>
+                <li className='cartLink'><img src={cartIcon} alt="Shopping cart" /></li>
             </ul>
         </nav>
     );
