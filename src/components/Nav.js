@@ -4,8 +4,7 @@ const Nav = () => {
     return (
         <nav className='wrapper'>
             <ul>
-                <li className='cartLink'><img src={cartIcon} alt="" /></li>
-                {/*stretch goal: create pop-out capabilities for hidden cart by clicking cart icon*/}
+                <li className='cartLink'><img src={cartIcon} alt="Icon image of a shopping cart" /></li>
             </ul>
         </nav>
     );

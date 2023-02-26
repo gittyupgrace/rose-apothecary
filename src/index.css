@@ -354,16 +354,6 @@ h3 {
   font-size: 1em;
 }
 
-h4 {
-  font-family: 'Varela Round', sans-serif;
-  font-weight: normal;
-  background-color: rgb(223, 243, 239);
-  padding: 8px 20px;
-  position: absolute;
-  bottom: -15px;
-  right: 0;
-}
-
 .cart {
   display: flex;
   flex-direction: column;
