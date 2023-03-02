@@ -10,6 +10,8 @@ const Cart = ({cartArray, handleRemoveFromCart}) => {
 
     let subtotal = arrayOfPrices.reduce((subtotal, itemPrice) => subtotal + itemPrice , 0);
 
+    console.log(cartArray.length)
+
     return (
         <section className="cart wrapper">
             <div className="cartHeader">
@@ -18,7 +20,11 @@ const Cart = ({cartArray, handleRemoveFromCart}) => {
             </div>
             <ul>
                 {
-                    cartArray.map((cartItemInfo) => {
+                    cartArray.length === 0
+                    ?   <div className="emptyCart">
+                            <p>Your cart is empty.</p>
+                        </div>
+                    : cartArray.map((cartItemInfo) => {
                         return <CartItem key={cartItemInfo.key} productInfo={cartItemInfo} handleClick={handleRemoveFromCart} />
                     })
                 }

@@ -380,6 +380,10 @@ h3 {
   text-align: right;
 }
 
+.emptyCart {
+  padding: 10px 0;
+}
+
 .cartItem {
   display: flex;
   justify-content: space-between;
