@@ -293,6 +293,33 @@ ul {
   margin: 0 auto;
 }
 
+button {
+  font-family: 'Varela Round', sans-serif;
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 15px 5px;
+  width: 100%;
+  text-transform: uppercase;
+  transition: 0.3s;
+  margin: 10px 0;
+}
+
+.removeButton {
+  width: 30%;
+  align-self: flex-end;
+  font-size: 0.9em;
+  border: 1.5px solid black;
+  padding: 10px 5px;
+  flex-basis: 30%;
+}
+
+button:hover,
+button:active{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
 header {
   border-top: 8px double black;
   border-bottom: 8px double black
@@ -325,16 +352,22 @@ nav {
 nav ul {
   padding-top: 20px;
   padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .cartLink {
   width: 60px;
   height: 60px;
-  padding: 10px;
+  position: relative;
+  z-index: 11;
 }
 
 .cartLink:hover {
   cursor: pointer;
+}
+
+.cartLink button {
+  padding: 10px;
 }
 
 .productList {
@@ -361,19 +394,41 @@ h3 {
 .cart {
   display: flex;
   flex-direction: column;
-  max-width: 60%;
-  padding: 50px 40px;
+  max-width: 55%;
+  padding: 75px 50px;
   position: absolute;
   top: 0;
   right: 0;
   z-index: 10;
   background: white;
   border: 2px solid black;
+  border-top: white;
 }
 
-.cartHeader {
-  display: flex;
-  justify-content: space-between;
+.hideCart{
+  display: none;
+}
+
+.showCart {
+  display: block;
+}
+
+.cartIcon {
+  background: transparent;
+  border: none;
+}
+
+.exitCart {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.cartIcon:hover, 
+.exitCart:hover {
+  background: transparent;
+  color: black;
 }
 
 .subtotal {
@@ -398,33 +453,6 @@ h3 {
 
 .cartItemInfo {
   flex-basis: 30%;
-}
-
-button {
-  font-family: 'Varela Round', sans-serif;
-  background-color: transparent;
-  border: 2px solid black;
-  padding: 15px 5px;
-  width: 100%;
-  text-transform: uppercase;
-  transition: 0.3s;
-  margin: 10px 0;
-}
-
-.removeButton {
-  width: 30%;
-  align-self: flex-end;
-  font-size: 0.9em;
-  border: 1.5px solid black;
-  padding: 10px 5px;
-  flex-basis: 30%;
-}
-
-button:hover,
-button:focus {
-  background-color: black;
-  color: white;
-  cursor: pointer;
 }
 
 footer {

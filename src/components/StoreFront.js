@@ -5,7 +5,7 @@ import {ref, getDatabase, onValue, push, remove} from 'firebase/database';
 import ProductList from "./ProductList";
 import Cart from "./Cart";
 
-const StoreFront = () => {
+const StoreFront = ({showCart}) => {
 
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
@@ -68,7 +68,7 @@ const StoreFront = () => {
     return (
         <main>
             <ProductList arrayOfProducts={products} handleAddToCart={addToCart}/>
-            <Cart cartArray={cart} handleRemoveFromCart={removeFromCart} />
+            <Cart cartArray={cart} handleRemoveFromCart={removeFromCart} showCart={showCart}/>
         </main>
     );
 }

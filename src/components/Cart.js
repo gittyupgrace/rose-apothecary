@@ -1,6 +1,6 @@
 import CartItem from "./CartItem";
 
-const Cart = ({cartArray, handleRemoveFromCart}) => {
+const Cart = ({showCart, cartArray, handleRemoveFromCart}) => {
 
     const arrayOfPrices = cartArray.map((item) => {
         return (
@@ -10,14 +10,9 @@ const Cart = ({cartArray, handleRemoveFromCart}) => {
 
     let subtotal = arrayOfPrices.reduce((subtotal, itemPrice) => subtotal + itemPrice , 0);
 
-    console.log(cartArray.length)
-
     return (
-        <section className="cart wrapper">
-            <div className="cartHeader">
+        <section className={showCart ? "showCart cart wrapper" : "hideCart cart wrapper"}>
             <h2>Your Cart</h2>
-            <button>X</button>
-            </div>
             <ul>
                 {
                     cartArray.length === 0
@@ -30,7 +25,6 @@ const Cart = ({cartArray, handleRemoveFromCart}) => {
                 }
             </ul>
             <h5 className="subtotal">Subtotal: ${subtotal}</h5>
-            <button>Keep Shopping</button>
             <button>Checkout</button>
         </section>
     );
