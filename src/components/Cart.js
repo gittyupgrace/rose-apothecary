@@ -12,7 +12,10 @@ const Cart = ({cartArray, handleRemoveFromCart}) => {
 
     return (
         <section className="cart wrapper">
+            <div className="cartHeader">
             <h2>Your Cart</h2>
+            <button>X</button>
+            </div>
             <ul>
                 {
                     cartArray.map((cartItemInfo) => {
